@@ -6,7 +6,7 @@ import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { BaseMovieProps } from "../../types/interfaces";
 
 const AddToPlaylistIcon: React.FC<BaseMovieProps> = (movie) => {
-  const context = useContext(MoviesContext); // New for Exercise 4
+  const context = useContext(MoviesContext);
   
   // New for Exercise 4
   const onUserSelect = (e: MouseEvent<HTMLButtonElement>) => {

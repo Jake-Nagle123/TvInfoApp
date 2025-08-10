@@ -29,9 +29,9 @@ const SiteHeader: React.FC = () => {
 
   const menuOptions = [
     { label: "Home", path: "/" },
-    { label: "Upcoming", path: "/movies/upcoming" }, // Adding upcoming for - Excercise Lab-Movie_App-Part3
+    { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Favorites", path: "/movies/favourites" },
-    { label: "Option 3", path: "/" },
+    { label: "Popular", path: "/movies/popular" },
     { label: "Option 4", path: "/" },
   ];
 
