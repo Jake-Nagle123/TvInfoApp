@@ -7,8 +7,7 @@ import { BaseMovieProps } from "../../types/interfaces";
 
 const AddToPlaylistIcon: React.FC<BaseMovieProps> = (movie) => {
   const context = useContext(MoviesContext);
-  
-  // New for Exercise 4
+
   const onUserSelect = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     context.addToMustWatch(movie);
