@@ -78,3 +78,7 @@ export interface Review {
   rating: number,
   movieId: number,
 }
+
+export interface PopularMovies extends DiscoverMovies {
+  vote_average: number;
+}
