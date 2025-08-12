@@ -9,7 +9,8 @@ import AddToFavouritesIcon from '../components/cardIcons/addToFavourites';
 import useFiltering from "../hooks/useFiltering";
 import MovieFilterUI, {
   titleFilter,
-  genreFilter
+  genreFilter,
+  voteFilter
 } from "../components/movieFilterUI";
 
 const titleFiltering = {
@@ -46,7 +47,7 @@ const PopularMoviesPage: React.FC = () => {
     setFilterValues(updatedFilterSet);
   };
 
-  const movies = data ? data.results : [];
+  const movies = data ? data.results.filter(m => voteFilter(m, "6")) : [];
   const displayedMovies = filterFunction(movies);
 
   return (
