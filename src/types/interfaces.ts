@@ -100,3 +100,16 @@ export interface BaseTvSeriesProps {
   poster_path?: string,
   genre_ids?: number[];
 }
+
+export interface TvServiesDetailsProps extends BaseTvSeriesProps {
+  genres: {
+    id: number;
+    name: string;
+  }[];
+}
+
+export interface TvSeriesReview {
+  id: string;
+  content: string;
+  author: string;
+}

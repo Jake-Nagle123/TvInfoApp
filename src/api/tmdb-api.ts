@@ -118,3 +118,28 @@ export const getOneTvSeries = (series_id: string) => {
     throw error
   });
 };
+
+export const getTvSeriesImages = (series_id: string | number) => {
+  return fetch(
+    `https://api.themoviedb.org/3/tv/${series_id}/images?api_key=${import.meta.env.VITE_TMDB_KEY}`
+  ).then((response) => {
+    if (!response.ok) {
+      throw new Error("failed to fetch images");
+    }
+    return response.json();
+  }).then((json) => json.posters)
+    .catch((error) => {
+      throw error
+  });
+};
+
+export const getTvSeriesReviews = (series_id: string | number) => {
+  return fetch(
+    `https://api.themoviedb.org/3/tv/${series_id}/reviews?api_key=${import.meta.env.VITE_TMDB_KEY}`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+    console.log(json.results);
+      return json.results;
+    });
+};
