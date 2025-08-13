@@ -82,3 +82,21 @@ export interface Review {
 export interface PopularMovies extends DiscoverMovies {
   vote_average: number;
 }
+
+export interface BaseTvSeriesProps {
+  name: string;
+  id: number,
+  overview: string,
+  popularity: number,
+  last_air_date: string,
+  in_production: boolean;
+  vote_average: number,
+  vote_count: number,
+  next_episode_to_air: string,
+  number_of_episodes: number,
+  number_of_seasons: number,
+  original_language: string,
+  original_name: string,
+  poster_path?: string,
+  genre_ids?: number[];
+}
