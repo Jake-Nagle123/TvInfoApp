@@ -105,9 +105,9 @@ export const getAllTvServies = () => {
   });
 };
 
-export const getOneTvSeries = (series_id: string) => {
+export const getOneTvSeries = (id: string) => {
   return fetch(
-    `https://api.themoviedb.org/3/tv/${series_id}?api_key=${import.meta.env.VITE_TMDB_KEY}`
+    `https://api.themoviedb.org/3/tv/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}`
   ).then((response) => {
     if (!response.ok) {
       throw new Error(`Failed to get data on one tv series. Response status: ${response.status}`);
@@ -119,9 +119,9 @@ export const getOneTvSeries = (series_id: string) => {
   });
 };
 
-export const getTvSeriesImages = (series_id: string | number) => {
+export const getTvSeriesImages = (id: string | number) => {
   return fetch(
-    `https://api.themoviedb.org/3/tv/${series_id}/images?api_key=${import.meta.env.VITE_TMDB_KEY}`
+    `https://api.themoviedb.org/3/tv/${id}/images?api_key=${import.meta.env.VITE_TMDB_KEY}`
   ).then((response) => {
     if (!response.ok) {
       throw new Error("failed to fetch images");
@@ -133,9 +133,9 @@ export const getTvSeriesImages = (series_id: string | number) => {
   });
 };
 
-export const getTvSeriesReviews = (series_id: string | number) => {
+export const getTvSeriesReviews = (id: string | number) => {
   return fetch(
-    `https://api.themoviedb.org/3/tv/${series_id}/reviews?api_key=${import.meta.env.VITE_TMDB_KEY}`
+    `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${import.meta.env.VITE_TMDB_KEY}`
   )
     .then((res) => res.json())
     .then((json) => {
