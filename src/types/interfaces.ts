@@ -108,6 +108,10 @@ export interface TvServiesDetailsProps extends BaseTvSeriesProps {
   }[];
 }
 
+export interface BaseTvSeriesListProps {
+  series: BaseTvSeriesProps[];
+}
+
 export interface TvSeriesReview {
   id: string;
   content: string;
