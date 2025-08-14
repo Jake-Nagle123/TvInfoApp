@@ -86,6 +86,7 @@ export interface PopularMovies extends DiscoverMovies {
 export interface BaseTvSeriesProps {
   name: string;
   id: number,
+  homepage: string | undefined;
   overview: string,
   popularity: number,
   last_air_date: string,
@@ -95,6 +96,9 @@ export interface BaseTvSeriesProps {
   next_episode_to_air: string,
   number_of_episodes: number,
   number_of_seasons: number,
+  tagline: string,
+  type: string,
+  status: string,
   original_language: string,
   original_name: string,
   poster_path?: string,
