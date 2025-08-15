@@ -117,7 +117,7 @@ export interface BaseTvSeriesListProps {
 }
 
 export interface TvSeriesListPageTemplateProps extends BaseTvSeriesListProps {
-  title: string;
+  name: string;
 }
 
 export interface TvSeriesImage {
@@ -139,4 +139,11 @@ export interface TvSeriesReview {
   id: string;
   content: string;
   author: string;
+}
+
+export interface DiscoverTvSeries {
+  page: number;
+  total_pages: number;
+  total_results: number;
+  results: BaseTvSeriesProps[];
 }

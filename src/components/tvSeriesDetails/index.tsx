@@ -5,7 +5,7 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import TvIcon from '@mui/icons-material/Tv';
 import Typography from "@mui/material/Typography";
-import { TvServiesDetailsProps } from "../../types/interfaces";
+import { TvSeriesDetailsProps } from "../../types/interfaces";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
@@ -31,7 +31,7 @@ const styles = {
   },
 };
 
-const TVSeriesDetails: React.FC<TvServiesDetailsProps> = (series) => {
+const TVSeriesDetails: React.FC<TvSeriesDetailsProps> = (series) => {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
 

@@ -1,25 +1,31 @@
 import React from "react";
-import TvSeriesHeader from "../components/headerTvSeriesList";
-import Grid from "@mui/material/Grid";
-import TvSeriesList from "../components/tvSeriesList";
-import { BaseTvSeriesListProps } from "../types/interfaces";
- 
-const styles = {
-  root: {
-    padding: "20px",
-  },
-};
+import PageTemplate from "../components/templateTvSeriesListPage";
+import { getAllTvServies } from "../api/tmdb-api";
+import { DiscoverTvSeries } from "../types/interfaces";
+import { useQuery } from "react-query";
+import Spinner from "../components/spinner";
 
-const TvSeriesMainPage: React.FC<BaseTvSeriesListProps> = ({series}) => {
+
+const TvSeriesMainPage: React.FC = () => {
+  const { data, error, isLoading, isError } = useQuery<DiscoverTvSeries, Error>("DiscoverSeries", getAllTvServies);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  if (isError) {
+    return <h1>{error.message}</h1>;
+  }
+
+  const series = data ? data.results : [];
+
   return (
-    <Grid container sx={styles.root}>
-      <Grid item xs={12}>
-        <TvSeriesHeader name={"Tv Series Home Page"} />
-      </Grid>
-      <Grid item container spacing={5}>
-        <TvSeriesList series={series}></TvSeriesList>
-      </Grid>
-    </Grid>
+    <>
+      <PageTemplate
+        name="Discover Tv Series"
+        series={series}
+      />
+    </>
   );
 };
 
