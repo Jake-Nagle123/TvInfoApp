@@ -31,7 +31,7 @@ const styles = {
   },
 };
 
-const TVSeriesDetails: React.FC<TvSeriesDetailsProps> = (series) => {
+const TvSeriesDetails: React.FC<TvSeriesDetailsProps> = (series) => {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -83,4 +83,4 @@ const TVSeriesDetails: React.FC<TvSeriesDetailsProps> = (series) => {
   );
 };
 
-export default TVSeriesDetails;
+export default TvSeriesDetails;

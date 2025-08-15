@@ -5,7 +5,7 @@ import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
-import { TvServiesDetailsProps } from "../../types/interfaces";
+import { TvSeriesDetailsProps } from "../../types/interfaces";
 
 const styles = {
   root: {  
@@ -17,7 +17,7 @@ const styles = {
     },
   };
 
-const TvSeriesHeader: React.FC<TvServiesDetailsProps> = (series) => {
+const TvSeriesHeader: React.FC<TvSeriesDetailsProps> = (series) => {
 
 
   return (
