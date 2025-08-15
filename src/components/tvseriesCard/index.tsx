@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import Grid from "@mui/material/Grid";
+import { Link } from "react-router-dom";
 import img from '../../images/film-poster-placeholder.png';
 import { BaseTvSeriesProps } from "../../types/interfaces";
 
@@ -17,9 +18,7 @@ const styles = {
   media: { height: 500 },
 };
 
-const TvSeriesCard: React.FC<BaseTvSeriesProps> = (series) => {
- 
-
+const TvSeriesCard: React.FC<BaseTvSeriesProps> = (series) => { 
   return (
     <Card sx={styles.card}>
       <CardHeader title={series.name} />
@@ -48,9 +47,11 @@ const TvSeriesCard: React.FC<BaseTvSeriesProps> = (series) => {
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-        <Button variant="outlined" size="medium" color="primary">
-          More Info ...
-        </Button>
+        <Link to={`/tvseries/${series.id}`}>
+          <Button variant="outlined" size="medium" color="primary">
+            More Info ...
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

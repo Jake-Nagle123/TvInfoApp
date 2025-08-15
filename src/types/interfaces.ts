@@ -105,7 +105,7 @@ export interface BaseTvSeriesProps {
   genre_ids?: number[];
 }
 
-export interface TvServiesDetailsProps extends BaseTvSeriesProps {
+export interface TvSeriesDetailsProps extends BaseTvSeriesProps {
   genres: {
     id: number;
     name: string;
@@ -114,6 +114,25 @@ export interface TvServiesDetailsProps extends BaseTvSeriesProps {
 
 export interface BaseTvSeriesListProps {
   series: BaseTvSeriesProps[];
+}
+
+export interface TvSeriesListPageTemplateProps extends BaseTvSeriesListProps {
+  title: string;
+}
+
+export interface TvSeriesImage {
+  file_path: string;
+  aspect_ratio?: number;
+  height?: number;
+  iso_639_1?: string;
+  vote_average?: number;
+  vote_count?: number;
+  width?: number;
+}
+
+export interface TvSeriesPageProps {
+  movie: TvSeriesDetailsProps;
+  images: MovieImage[];
 }
 
 export interface TvSeriesReview {
