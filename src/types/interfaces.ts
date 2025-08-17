@@ -45,7 +45,7 @@ export interface MoviePageProps {
   images: MovieImage[];
 }
 
-export type FilterOption = "title" | "genre";
+export type FilterOption = "title" | "genre" | "name";
 
 export interface MovieListPageTemplateProps extends BaseMovieListProps {
   title: string;
@@ -147,3 +147,5 @@ export interface DiscoverTvSeries {
   total_results: number;
   results: BaseTvSeriesProps[];
 }
+
+export type Filters = BaseMovieProps | BaseTvSeriesProps;

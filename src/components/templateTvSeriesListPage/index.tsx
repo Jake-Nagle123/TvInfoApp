@@ -6,14 +6,8 @@ import { TvSeriesListPageTemplateProps } from "../../types/interfaces";
 
 const styles = {
   root: {
-    padding: "20px",
-  },
-  fab: {
-    marginTop: 8,
-    position: "fixed",
-    top: 2,
-    right: 2,
-  },
+    backgroundColor: "#bfbfbf",
+  }
 };
 
 const TvSeriesListPageTemplate: React.FC<TvSeriesListPageTemplateProps> = ({ series, name }) => {

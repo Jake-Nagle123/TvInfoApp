@@ -9,7 +9,7 @@ import { TvSeriesDetailsProps } from "../types/interfaces";
 
 const TvSeriesDetailsPage: React.FC = () => {
   const { id } = useParams();
-const { data: series, error, isLoading, isError } = useQuery<TvSeriesDetailsProps, Error>(
+  const { data: series, error, isLoading, isError } = useQuery<TvSeriesDetailsProps, Error>(
     ["series", id],
     () => getOneTvSeries(id || "")
   );

@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import FilterCard from "../filterMoviesCard";
 import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
-import { BaseMovieProps } from "../../types/interfaces";
+import { Filters } from "../../types/interfaces";
 
-export const titleFilter = (movie: BaseMovieProps, value: string): boolean => {
-  return movie.title.toLowerCase().search(value.toLowerCase()) !== -1;
+export const titleFilter = (item: Filters, value: string): boolean => {
+  return ("title" in item ? item.title : item.name).toLowerCase().search(value.toLowerCase()) !== -1;
 };
 
-export const genreFilter = (movie: BaseMovieProps, value: string) => {
+export const genreFilter = (item: Filters, value: string) => {
   const genreId = Number(value);
-  const genreIds = movie.genre_ids;
+  const genreIds = item.genre_ids;
   return genreId > 0 && genreIds ? genreIds.includes(genreId) : true;
 };
 
-export const voteFilter = (movie: BaseMovieProps, value: string): boolean => {
-  return movie.vote_average > Number(value);
+export const voteFilter = (item: Filters, value: string): boolean => {
+  return item.vote_average > Number(value);
 };
 
 const styles = {

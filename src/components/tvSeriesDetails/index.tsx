@@ -56,10 +56,10 @@ const TvSeriesDetails: React.FC<TvSeriesDetailsProps> = (series) => {
         ))}
       </Paper>
       <Paper component="ul" sx={styles.chipSet}>
-        <Chip icon={<DateRangeIcon />} label={`${series.number_of_seasons} min.`} />
+        <Chip icon={<DateRangeIcon />} label={`${series.number_of_seasons} seasons.`} />
         <Chip
           icon={<MonetizationIcon />}
-          label={`${series.number_of_episodes}`}
+          label={`Ep: ${series.number_of_episodes}`}
         />
         <Chip
           icon={<TvIcon />}
