@@ -35,13 +35,13 @@ const TvSeriesCard: React.FC<BaseTvSeriesProps> = (series) => {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {series.last_air_date}
+              {series.first_air_date}
             </Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {series.vote_average}{" "}
+                {"  "} {series.vote_average}{" "}
             </Typography>
           </Grid>
         </Grid>
