@@ -131,7 +131,7 @@ export interface TvSeriesImage {
 }
 
 export interface TvSeriesPageProps {
-  movie: TvSeriesDetailsProps;
+  series: TvSeriesDetailsProps;
   images: MovieImage[];
 }
 
