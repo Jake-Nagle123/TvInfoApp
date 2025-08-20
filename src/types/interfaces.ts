@@ -150,3 +150,14 @@ export interface DiscoverTvSeries {
 }
 
 export type Filters = BaseMovieProps | BaseTvSeriesProps;
+
+export interface BaseActorsProps {
+  name: string;
+  id: number;
+  imdb_id: string;
+  place_of_birth: string;  
+  homepage: string | undefined;
+  birthday: string;
+  deathday: string;
+  popularity: number;
+}
