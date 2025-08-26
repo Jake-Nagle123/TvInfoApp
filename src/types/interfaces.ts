@@ -165,31 +165,30 @@ export interface BaseActorProps {
   profile_path?: string;
   place_of_birth: string;
   favourite?: boolean;
-  known_for?: ActorsKnownFor[];
-}
-
-export interface ActorsKnownFor {
-  id: number;
-  media_type: "movie" | "tv";
-  overview: string;
-  title?: string; // movie
-  release_date?: string; // movie
-  name?: string; // tv
-  vote_average: number;
-  vote_count: number;
-  popularity: number;
-  poster_path?: string;
-  original_language: string;
-  genre_ids?: number[];
-}
-
-export interface ActorDetailsProps extends BaseActorProps {
-  genres: {
-    id: number;
-    name: string;
-  }[];
 }
 
 export interface BaseActorListProps {
   actors: BaseActorProps[];
+}
+
+export interface BaseActorCombinedCredits {
+  id: number;
+  cast?: [];
+}
+
+export interface CreditCastProps {
+  id: number;
+  media_type: "movie" | "tv";
+  title?: string; // movies
+  name?: string; // tv
+  character: string;
+  overview: string;
+  poster_path?: string;
+  release_date?: string;  // movies
+  first_air_date?: string; // tv
+  vote_average: number;
+  vote_count: number;
+  popularity: number;
+  original_language: string;
+  genre_ids?: number[];
 }
