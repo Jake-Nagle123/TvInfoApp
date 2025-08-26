@@ -151,13 +151,45 @@ export interface DiscoverTvSeries {
 
 export type Filters = BaseMovieProps | BaseTvSeriesProps;
 
-export interface BaseActorsProps {
-  name: string;
+export interface BaseActorProps {
   id: number;
-  imdb_id: string;
-  place_of_birth: string;  
-  homepage: string | undefined;
+  name: string;
+  biography: string;
   birthday: string;
-  deathday: string;
+  deathday: string | undefined;
+  gender: number;
+  imdb_id: string;
+  homepage: string | undefined;  
+  known_for_department: string;  
   popularity: number;
+  profile_path?: string;
+  place_of_birth: string;
+  favourite?: boolean;
+  known_for?: ActorsKnownFor[];
+}
+
+export interface ActorsKnownFor {
+  id: number;
+  media_type: "movie" | "tv";
+  overview: string;
+  title?: string; // movie
+  release_date?: string; // movie
+  name?: string; // tv
+  vote_average: number;
+  vote_count: number;
+  popularity: number;
+  poster_path?: string;
+  original_language: string;
+  genre_ids?: number[];
+}
+
+export interface ActorDetailsProps extends BaseActorProps {
+  genres: {
+    id: number;
+    name: string;
+  }[];
+}
+
+export interface BaseActorListProps {
+  actors: BaseActorProps[];
 }
