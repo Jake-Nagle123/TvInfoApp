@@ -18,12 +18,15 @@ const ActorPage: React.FC = () => {
   }
 
   const actors = data ? data.results : [];
+  const displayedActors = actors.filter(
+    (person: {known_for_department: string}) => person.known_for_department === "Acting"
+  );
   
   return (
     <>
       <PageTemplate
         name="Popular Actors"
-        actors={actors}
+        actors={displayedActors}
       />
     </>
   );
