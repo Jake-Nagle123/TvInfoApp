@@ -165,6 +165,12 @@ export const getActors = () => {
       throw new Error(`Unable to fetch actors data. Response status: ${response.status}`);
     return response.json();
   })
+   .then((data) => {
+    const onlyActors = data.results.filter(
+      (person: {known_for_department: string}) => person.known_for_department === "Acting"
+    );
+    return onlyActors;
+   })
     .catch((error) => {
       throw error
     });
