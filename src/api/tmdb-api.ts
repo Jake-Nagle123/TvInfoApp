@@ -159,7 +159,7 @@ export const getTvGenres = () => {
 
 export const getActors = () => {
   return fetch(
-    `https://api.themoviedb.org/3/person/popular?api_key=${import.meta.env.VITE_TMDB_KEY}language=en-US&page=1`    
+    `https://api.themoviedb.org/3/person/popular?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`    
   ).then((response) => {
     if (!response.ok)
       throw new Error(`Unable to fetch actors data. Response status: ${response.status}`);
@@ -178,7 +178,7 @@ export const getActors = () => {
 
 export const getActor = (id: string) => {
   return fetch(
-    `https://api.themoviedb.org/3/person/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}language=en-US`        
+    `https://api.themoviedb.org/3/person/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`        
   ).then((response) => {
     if (!response.ok)
       throw new Error(`Unable to fetch actor. Response status: ${response.status}`);
@@ -191,7 +191,7 @@ export const getActor = (id: string) => {
 
 export const getPersonComboCredits = (id: string) => {
   return fetch(
-    `https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=${import.meta.env.VITE_TMDB_KEY}language=en-US`
+    `https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
   ).then((response) => {
     if (!response.ok)
       throw new Error(`Unable to fetch movie and TV credits. Response status: ${response.status}`);

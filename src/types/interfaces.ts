@@ -171,6 +171,17 @@ export interface BaseActorListProps {
   actors: BaseActorProps[];
 }
 
+export interface ActorListPageTemplateProps extends BaseActorListProps {
+  name: string;
+}
+
+export interface PopularActors {
+  page: number;
+  total_pages: number;
+  total_results: number;
+  results: BaseActorProps[];
+}
+
 export interface BaseActorCombinedCredits {
   id: number;
   cast?: [];
