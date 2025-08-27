@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
+import PersonIcon from '@mui/icons-material/Person';
 import StarRateIcon from "@mui/icons-material/StarRate";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
@@ -18,7 +18,17 @@ const styles = {
   media: { height: 500 },
 };
 
+enum Gender {
+  NotSet = 0,
+  Female = 1,
+  Male = 2,
+  NonBinary = 3,
+}
+
 const ActorCard: React.FC<BaseActorProps> = (actor) => { 
+
+  const genderLabel = Gender[actor.gender]
+
   return (
     <Card sx={styles.card}>
       <CardHeader title={actor.name} />
@@ -34,8 +44,8 @@ const ActorCard: React.FC<BaseActorProps> = (actor) => {
         <Grid container>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
-              <CalendarIcon fontSize="small" />
-              {actor.birthday}
+              <PersonIcon fontSize="small" />
+              {genderLabel}
             </Typography>
           </Grid>
           <Grid item xs={6}>
