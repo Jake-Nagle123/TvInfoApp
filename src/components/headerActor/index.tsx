@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
@@ -7,7 +7,8 @@ import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import { BaseActorProps } from "../../types/interfaces";
 import Avatar from "@mui/material/Avatar";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import GradeIcon from '@mui/icons-material/Grade';
+import { ActorsContext } from "../../contexts/actorsContext";
 
 const styles = {
     root: {  
@@ -18,12 +19,14 @@ const styles = {
     padding: 1.5,
     },
     avatar: {
-    backgroundColor: "rgb(255, 0, 0)",
+      backgroundColor: "rgb(255, 0, 0)",
     },
   };
 
 const ActorHeader: React.FC<BaseActorProps> = (actor) => {
-  const favouriteActor = JSON.parse(localStorage.getItem("favourites") || '[]'); // need to fix
+  const { favourites } = useContext(ActorsContext);
+
+  const favouriteActors = favourites.find((id) => id === actor.id)? true : false;
   
   return (
     <Paper component="div" sx={styles.root}>
@@ -31,9 +34,9 @@ const ActorHeader: React.FC<BaseActorProps> = (actor) => {
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
       {
-        favouriteActor ? (
+        favouriteActors ? (
           <Avatar sx={styles.avatar}>
-            <FavoriteIcon />
+            <GradeIcon />
           </Avatar>
         ) : null
       }

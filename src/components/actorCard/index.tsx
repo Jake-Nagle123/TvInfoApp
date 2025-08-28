@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -8,15 +8,26 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import PersonIcon from '@mui/icons-material/Person';
 import StarRateIcon from "@mui/icons-material/StarRate";
+import GradeIcon from '@mui/icons-material/Grade';
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import img from '../../images/film-poster-placeholder.png';
 import { BaseActorProps } from "../../types/interfaces";
+import Avatar from "@mui/material/Avatar";
+import { ActorsContext } from "../../contexts/actorsContext";
 
 const styles = {
   card: { maxWidth: 345 },
   media: { height: 500 },
+  avatar: {
+    backgroundColor: "rgb(255, 0, 0)",
+  },
 };
+
+interface ActorCardProps {
+  actor: BaseActorProps;
+  action: (a: BaseActorProps) => React.ReactNode;
+}
 
 enum Gender {
   NotSet = 0,
@@ -25,13 +36,29 @@ enum Gender {
   NonBinary = 3,
 }
 
-const ActorCard: React.FC<BaseActorProps> = (actor) => { 
+const ActorCard: React.FC<ActorCardProps> = ({actor, action}) => {
+  const { favourites } = useContext(ActorsContext);
 
-  const genderLabel = Gender[actor.gender]
+  const isFavourite = favourites.find((id) => id === actor.id)? true : false; 
+
+  const genderLabel = Gender[actor.gender];
 
   return (
     <Card sx={styles.card}>
-      <CardHeader title={actor.name} />
+      <CardHeader
+        avatar={
+          isFavourite ? (
+            <Avatar sx={styles.avatar}>
+              <GradeIcon />
+            </Avatar>
+          ) : null
+        }
+        title={
+          <Typography variant="h5" component="p">
+            {actor.name}{" "}
+          </Typography>
+        }
+      />
       <CardMedia
         sx={styles.media}
         image={
@@ -57,6 +84,7 @@ const ActorCard: React.FC<BaseActorProps> = (actor) => {
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
+        {action(actor)}
         <Link to={`/actors/${actor.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info...
