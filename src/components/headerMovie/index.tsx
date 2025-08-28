@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
@@ -8,6 +8,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { MovieDetailsProps } from "../../types/interfaces";
 import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { MoviesContext } from "../../contexts/moviesContext";
 
 const styles = {
     root: {  
@@ -23,7 +24,9 @@ const styles = {
   };
 
 const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
-  const favouriteMovies = JSON.parse(localStorage.getItem("favourites") || '[]');
+  const { favourites } = useContext(MoviesContext);
+
+  const favouriteMovies = favourites.find((id) => id === movie.id)? true : false;
 
   return (
     <Paper component="div" sx={styles.root}>
