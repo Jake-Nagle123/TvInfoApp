@@ -175,6 +175,16 @@ export interface ActorListPageTemplateProps extends BaseActorListProps {
   name: string;
 }
 
+export interface ActorImage {
+  file_path: string;
+  aspect_ratio?: number;
+  height?: number;
+  iso_639_1?: string;
+  vote_average?: number;
+  vote_count?: number;
+  width?: number;
+}
+
 export interface PopularActors {
   page: number;
   total_pages: number;
