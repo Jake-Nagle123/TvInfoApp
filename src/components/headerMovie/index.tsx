@@ -19,7 +19,7 @@ const styles = {
     padding: 1.5,
     },
     avatar: {
-    backgroundColor: "rgb(255, 0, 0)",
+      backgroundColor: "rgb(255, 0, 0)",
     },
   };
 

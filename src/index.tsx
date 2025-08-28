@@ -16,6 +16,8 @@ import TvSeriesPage from './pages/tvSeriesDetailsPage';
 import TvSeriesMainPage from './pages/tvSeriesMainPage';
 import ActorPage from './pages/actorPage';
 import ActorDetailsPage from './pages/actorDetailsPage';
+import FavouriteActorsPage from "./pages/favouriteActorsPage";
+import ActorsContextProvider from "./contexts/actorsContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,9 +35,11 @@ const App = () => {
       <BrowserRouter>
         <SiteHeader />
         <MoviesContextProvider>
+        <ActorsContextProvider>
           <Routes>
             <Route path="/actors" element={<ActorPage />} />
             <Route path="/actors/:id" element={<ActorDetailsPage />} />
+            <Route path="/actors/favourites" element={<FavouriteActorsPage />} />
             <Route path="/tvseries" element={<TvSeriesMainPage />} />
             <Route path="/tvseries/:id" element={<TvSeriesPage />} />
             <Route path="/movies/popular" element={<PopularMoviesPage />} />
@@ -47,6 +51,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
+        </ActorsContextProvider>
         </MoviesContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
