@@ -46,13 +46,13 @@ const TvSeriesMainPage: React.FC = () => {
   };
 
   const series = data ? data.results : [];
-  const displayedMovies = filterFunction(series);
+  const displayedSeries = filterFunction(series);
 
   return (
     <>
       <PageTemplate
         name="Discover Tv Series"
-        series={displayedMovies}
+        series={displayedSeries}
       />
       <TvSeriesFilterUI
         onFilterValuesChange={changeFilterValues}
