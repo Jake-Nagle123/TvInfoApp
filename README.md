@@ -41,6 +41,7 @@ I put together information on a combined credits API call and the shape of what 
 #### Vercel
 * Import project via Github
 * Give setup of project details
+
 Note: May need to import .env keys into environment variables for external APIs
 
 Your project is now deployed!
