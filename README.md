@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# Tv Info App 
+## Full Stack Web Development 2 - Assignment_1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+Develop a SPA using the React framework to create an app using an external API source which returns information on the media.
 
-Currently, two official plugins are available:
+## Project Description
+The application displays multiple media pages received an external API request. The API data is received from a Movie Database(TMDB), which has great variations in the information it gives. Through the use of API fetch calls, components and templates I created four different pages including a most popular movies page, a tv series page, actors page, and a favourite actors page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The actors and tv series page both have a more info button which leads to a detailed page with a parameter value of the id of the chosen element. Actors can be marked as favourites by clicking the star and they will appear on the favourite actor page. They can be removed from the favourites page by clicking the bin button.
 
-## Expanding the ESLint configuration
+Caching is implemented on all of the web pages to prevent unnecessary re-fetching. This was done through the use of the react-query library of React, query Functions and the useQuery hook. Vite was used in the project to give a fast page refresh. The four pages were built locally first using the IDE Visual Studio Code and the React framework, and later deployed online through the deployment site Vercel.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+I put together information on a combined credits API call and the shape of what the data may look like into the interface. I had intended to use this for a multi-criteria search for the actors which is why I left the no filter on the page. However I found the people data more of a challenge than the data for movies or tv series but I left the code in there with the intention of developing the application in the future.
 
-- Configure the top-level `parserOptions` property like this:
+## Set up and run project
+#### Needed for Project
+* vite
+* storybook
+* mui
+* vercel
+* tmdb
+* Visual Studio Code
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+#### Copy Github project Url
+* Click on code
+* Copy HTTPS
+ 
+#### Install Project
+* npm install
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Open account on TMDB
+* Follow https://www.themoviedb.org/
+* Click on the sign up button
+* Give your account details
+
+#### Open account on Vercel
+* Follow https://vercel.com/login
+* Give account details
+
+#### Vercel
+* Import project via Github
+* Give setup of project details
+Note: May need to import .env keys into environment variables for external APIs
+
+Your project is now deployed!
+
+## Links
+#### Links to my project
+1. GitHub: https://github.com/Jake-Nagle123/TvInfoApp.git
+2. Vercel: multi-media-channel.vercel.app
+3. Youtube link: https://youtu.be/0rNVyG4LWx8
+
+#### Link used to begin project
+1. https://github.com/Jake-Nagle123/TvInfoApp.git
+
+#### Helpful link
+1. MUI - https://mui.com/
