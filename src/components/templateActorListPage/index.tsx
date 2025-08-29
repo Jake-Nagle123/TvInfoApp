@@ -10,7 +10,7 @@ const styles = {
   }
 };
 
-const ActorListPageTemplate: React.FC<ActorListPageTemplateProps> = ({ actors, name }) => {
+const ActorListPageTemplate: React.FC<ActorListPageTemplateProps> = ({ actors, name, action }) => {
   return (
    <>
       <Grid container sx={styles.root}>
@@ -19,6 +19,7 @@ const ActorListPageTemplate: React.FC<ActorListPageTemplateProps> = ({ actors, n
         </Grid>
         <Grid item container spacing={5}>
           <ActorList
+            action={action}
             actors={actors}
           ></ActorList>
         </Grid>

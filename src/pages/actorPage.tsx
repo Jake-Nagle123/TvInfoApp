@@ -1,10 +1,10 @@
 import React from "react";
 import PageTemplate from "../components/templateActorListPage";
 import { getActors } from "../api/tmdb-api";
-import { PopularActors } from "../types/interfaces";
+import { BaseActorProps, PopularActors } from "../types/interfaces";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
-// import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'; -feature to add later
+import AddToFavouritesIcon from '../components/cardIcons/actorAddToFavourites';
 
 const ActorPage: React.FC = () => {
   const { data, error, isLoading, isError } = useQuery<PopularActors, Error>("popular", getActors);
@@ -27,6 +27,9 @@ const ActorPage: React.FC = () => {
       <PageTemplate
         name="Popular Actors"
         actors={displayedActors}
+        action={(actor: BaseActorProps) => {
+          return <AddToFavouritesIcon {...actor} />
+        }}
       />
     </>
   );

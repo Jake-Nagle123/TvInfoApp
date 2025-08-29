@@ -169,6 +169,7 @@ export interface BaseActorProps {
 
 export interface BaseActorListProps {
   actors: BaseActorProps[];
+  action: (a: BaseActorProps) => React.ReactNode;
 }
 
 export interface ActorListPageTemplateProps extends BaseActorListProps {
